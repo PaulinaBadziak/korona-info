@@ -1,0 +1,22 @@
+# Ignore files
+*.bak
+*.class
+*.obj
+*.tmp
+*.iml
+*~
+
+# Ignore folders
+Debug/
+Release/
+bin/
+build/
+debug/
+release/
+temp/
+logs/
+.settings/
+target/
+.idea/
+.DS_store
+/**/*.iml
