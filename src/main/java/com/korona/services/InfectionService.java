@@ -24,7 +24,12 @@ public class InfectionService {
     public Response isUserInfected() {
         InfectionResponse response = new InfectionResponse();
         response.setStatus(InfectionStatus.CURED);
-        return Response.status(200).entity(gson.toJson(response)).build();
+        return Response.status(200).header("Access-Control-Allow-Origin", "*")
+                .header("Access-Control-Allow-Credentials", "true")
+                .header("Access-Control-Allow-Headers",
+                        "origin, content-type, accept, authorization")
+                .header("Access-Control-Allow-Methods",
+                        "GET, POST, PUT, DELETE, OPTIONS, HEAD").entity(gson.toJson(response)).build();
     }
 
     @GET
@@ -34,6 +39,11 @@ public class InfectionService {
         users.add(new UserData("Mariola", "Zieba", "Zarazona 34 95-300 Legedzin"));
         InfectionsResponse infectionsResponse = new InfectionsResponse();
         infectionsResponse.setUsers(users);
-        return Response.status(200).entity(gson.toJson(infectionsResponse)).build();
+        return Response.status(200)      .header("Access-Control-Allow-Origin", "*")
+                .header("Access-Control-Allow-Credentials", "true")
+                .header("Access-Control-Allow-Headers",
+                        "origin, content-type, accept, authorization")
+                .header("Access-Control-Allow-Methods",
+                        "GET, POST, PUT, DELETE, OPTIONS, HEAD").entity(gson.toJson(infectionsResponse)).build();
     }
 }
